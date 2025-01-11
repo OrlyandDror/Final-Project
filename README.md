@@ -161,9 +161,10 @@ Our object detection model provides us with information about the object's cente
 Now we will build the fixed vector from the table corner to the center of the robot's base. We identified this point based on the maximum distance the robot can reach and recorded the data according to the robot's coordinate system.
 
 Let’s define the location of the fixed point relative to the robot’s base system as follows:
-\[
-\overrightarrow{(BC)} = (x_{\text{const}}, y_{\text{const}})_{\text{mm}} \quad \text{(Fixed vector from robot base to fixed point)}
-\]
+\
+$\overline{BC} = (x_{\text{const}}, y_{\text{const}})$
+(Fixed vector from robot base to fixed point)
+
 
 Next, let’s define the location of the corner in pixels as:
 \[
