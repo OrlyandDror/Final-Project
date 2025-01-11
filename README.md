@@ -167,33 +167,33 @@ $\overline{BC} = (x_{\text{const}}, y_{\text{const}})$
 
 
 Next, let’s define the location of the corner in pixels as:
-\[
-P_{\text{corner}_{\text{constpix}}} = (x_{c, \text{pix}}, y_{c, \text{pix}})_{\text{pix}}
-\]
+
+$\{P_{corner}} = (x_{\text{c,pix}}, y_{\text{c,pix}})$
+
+
 This fixed point is represented in pixels, based on the detection of the purple object in a known position.
 
 We will define the object center in pixels, which we receive from the object detection model as:
-\[
-P_{\text{object}_{\text{pix}}} = (x_{\text{obj}}, y_{\text{obj}})_{\text{pix}}
-\]
+
+$P_{\text{object,pix}} = (x_{\text{obj,pix}}, y_{\text{obj,pix}})$
+
 
 Now, we will use the conversion factor from pixels to millimeters, which we obtained from size calibration. This factor represents the ratio between pixels and millimeters, and we will denote it as \( \alpha \).
 
 Now, we will construct the vector between the fixed point on the table and the object’s center:
-\[
-\overrightarrow{(OC)}_{\text{corner2obj}} = \left( x_{\text{obj}} - x_{c, \text{pix}}, y_{\text{obj}} - y_{c, \text{pix}} \right)
-\]
+
+$\overline{OC} = (x_{\text{obj,pix}}- x_{\text{c,pix}}, y_{\text{obj,pix}} - y_{\text{c,pix}})$
+
 
 We obtain the vector in pixels, and now we multiply it by the conversion factor:
-\[
-\overrightarrow{(OC)}_{\text{corner2obj}} = \left( x_{\text{obj}} - x_{c, \text{pix}}, y_{\text{obj}} - y_{c, \text{pix}} \right) \cdot \alpha \quad \left[\text{mm}\right]
-\]
 
-Fin
+$\overline{OC_{\text{mm}}}= (x_{\text{obj,pix}}- x_{\text{c,pix}}, y_{\text{obj,pix}} - y_{\text{c,pix}})\cdot \alpha$
 
-\[
-\overrightarrow{(OB)} = \left(x_{const} - (x_{obj} - x_{c,pix}) \cdot \alpha, y_{const} + (y_{obj} - y_{c,pix}) \cdot \alpha \right)
-\]
+
+
+
+$\overline{OB_{\text{mm}}} = (x_{\text{const}} - (x_{\text{obj,pix}}- x_{\text{c,pix}}) \cdot \alpha  ,  y_{\text{const}} + (y_{\text{obj,pix}} - y_{\text{c,pix}}) \cdot \alpha )$
+
 
 Since the coordinate systems of the robot and the camera do not align perfectly, we note that the X-axis of the camera aligns with the X-axis of the robot base, but the Y-axes are inverted. Therefore, the signs for the Y-axis components are reversed.
 
