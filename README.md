@@ -69,6 +69,20 @@ We chose to use the YOLOv8 model for our project, a reliable model that works ef
 
 The model is pre-built; we input the labeled image dataset according to the different objects. Then, we train the model on this dataset multiple times to improve its object detection accuracy. We evaluate the model’s accuracy using performance metrics.
 
+work steps:
+1. take a large amount of photos of the different objects with different lightning, distances and backgrounds. minimum 200 photos to each objecs.
+2. upload the photos to "Roboflow"
+3. mark each photo and tag the class it belong to.
+4. enlarge the photos in roboflow.
+5. tranin the model in roboflow to get first results and to help decide if the dasatet is large enoght.
+6. download the data (zip file)
+7. open the data.yaml file with "Notepad" app and make sure it look like this(change it if nesessary):
+   
+   ![image](https://github.com/user-attachments/assets/2db3d979-756b-4129-be40-08e274a1ca46)
+   
+8. upload the zip file that downloaded from roboflow to google drive.
+9. run the code 
+
 Since our lab contains dummy objects representing different food items—salmon, steak, chicken breast, and yellow cheese—but these objects are not identical to the real food products on which our model was trained, we were required to create a new dataset with new images from the lab, featuring the dummy objects.
 
 Since we rebuilt the dataset, we chose to focus on only two objects: yellow cheese and steak. We retrained the model on this new dataset. The model works and detects steak and yellow cheese, but its accuracy is not high. Therefore, we need to expand the image dataset from the lab to improve the accuracy and detection capabilities of our model.
@@ -122,16 +136,25 @@ The algorithm compares the location of the chessboard points as they appear in t
 
 These equations are used to compute the camera’s intrinsic matrix, extrinsic matrix, and distortion coefficients.
 
-After the camera is calibrated, we can use the calibration parameters to correct distortion in the images.
+After the camera is calibrated, we can use the calibration parameters to correct distortion in the image.
 
-5. update the folder path for saving the images after the correction in prat 2 at the "setup enviroment" code.
+5. update the folder path for saving the image after the correction in prat 2 at the "setup enviroment" code.
 
 ![image](https://github.com/user-attachments/assets/0e5eb656-fde5-4528-b70d-ff37c724b0d0)
 
 ### Pixel-to-millimeter conversion
 ![image](https://github.com/user-attachments/assets/03458775-4103-4c63-8906-fc26ab7e6c30)
+Use the code "setup enviroment" part 3.
 
 The code is interactive. When running the code, an image is randomly selected from the chessboard calibration folder. The selected image opens, and the user is required to mark two points whose distance is known, for example, the length/width of the table. After marking the two points, the user must input the distance in millimeters. Using this data, the code performs the conversion from pixels to millimeters.
+
+1. meassure a distance for example the length of the table.
+2. run the code- an image automatically will apear.
+3. mark one point of the meassured object from 1. - a red dot will apear
+4. mark a second point - because of a bug there is no second red dot on the image.
+5. the code will ask for the distance in mm.
+6. after inserting the distance in mm, the code provides the ration.
+ 
 
 The purpose of this calibration is to enable the translation of the known point's position in the camera system (represented in pixels) to a position in the robot's system (in millimeters).
 
@@ -139,7 +162,13 @@ It is very important that this step is done after correcting for lens distortion
 
 ### Determining a fixed position in the robot's system for constructing a vector to the object
 
-We chose to find the fixed point by detecting the corner of the table. To achieve this, we placed a purple-colored object at the edge of the table. When running the code, the system captures an image of the table, marks the purple object, and returns the center of the marked object to the user.
+We chose to find the fixed point by detecting the corner of the table.
+
+1. place a purple object at the corner of the table, that the distance from the robot base is known.
+2. take a photo of the table with the lab camera.
+3. update the image path in part 4 at the "setup enviroment" code.
+4. the code will mark the purple object and prin the (x,y) coordinates in pixels.
+Note: you can change the object's color detection by changing the color vectors range in part 4 (lower purple and upper purple). 
 
 In general, for each image, each pixel contains information about the color it represents in a specific color space. For example, RGB is the basic color space representing red, green, and blue, while HSV represents color saturation and brightness. The image, which is automatically captured in the RGB space, is converted to the HSV space for better detection, as this space is more robust for color detection in images. Each color is characterized by a vector of numbers within a certain range, so each range represents a specific color. For example, the red color is characterized by the number range:
 [0, 100, 100], [10, 255, 255].
