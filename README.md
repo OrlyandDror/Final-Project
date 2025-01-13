@@ -79,9 +79,11 @@ work steps:
 7. open the data.yaml file with "Notepad" app and make sure it look like this(change it if nesessary):
    
    ![image](https://github.com/user-attachments/assets/2db3d979-756b-4129-be40-08e274a1ca46)
-   
+
 8. upload the zip file that downloaded from roboflow to google drive.
-9. run the code 
+9. run the code "YOLO_train_in_google_colab" at google colab site (the purpose is that in google colab you can use GPU).
+    Note: throu runtime->change runtime type you can change from CPU to GPU. you can use the GPU only once a day.
+10. the code saves the weights (a pt file) to your drive. download this file to your computer and put it's path in the "YOLO_model_on_image" code.
 
 Since our lab contains dummy objects representing different food items—salmon, steak, chicken breast, and yellow cheese—but these objects are not identical to the real food products on which our model was trained, we were required to create a new dataset with new images from the lab, featuring the dummy objects.
 
