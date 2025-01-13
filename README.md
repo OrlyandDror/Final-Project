@@ -30,7 +30,7 @@ https://github.com/user-attachments/assets/a2a7212c-d1ae-4683-a3da-b9d132b0de43
 ### 1. Introduction
 This project focuses on developing a system for detecting food objects using a camera and sending the coordinates of the object's center to a robotic arm. The robotic arm then moves to the precise location of the object's center.
 
-The project integrates the YOLO* (You Only Look Once) model for real-time object detection and localization with robotic arm control, creating a seamless interaction between visual detection and physical movement. Additionally, the project includes calibration of the camera and workspace to ensure accurate detection and positioning.
+The project integrates the YOLO<sup>[1]</sup> (You Only Look Once) model for real-time object detection and localization with robotic arm control, creating a seamless interaction between visual detection and physical movement. Additionally, the project includes calibration of the camera and workspace to ensure accurate detection and positioning.
 
 Key features:
 
@@ -48,7 +48,9 @@ Coordinate Calculation: Determine the center coordinates of the detected objects
     
 Robotic Arm Control: Send the calculated coordinates to the robotic arm.
 
-Robotic movment: the robot arms moves towards the center of the object.
+Robotic movment: the robot arms moves towards the center of the object. 
+
+<sup>[1]</sup> the YOLO model was taken from "Ultralitics"
 
 ------------
 <a name="2.0"></a>
@@ -253,4 +255,4 @@ There are several gaps that need to be addressed for system improvement.
 
 
 
-* the YOLO model was taken from Ultralitics
+
