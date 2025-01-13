@@ -30,7 +30,7 @@ https://github.com/user-attachments/assets/a2a7212c-d1ae-4683-a3da-b9d132b0de43
 ### 1. Introduction
 This project focuses on developing a system for detecting food objects using a camera and sending the coordinates of the object's center to a robotic arm. The robotic arm then moves to the precise location of the object's center.
 
-The project integrates the YOLO (You Only Look Once) model for real-time object detection and localization with robotic arm control, creating a seamless interaction between visual detection and physical movement. Additionally, the project includes calibration of the camera and workspace to ensure accurate detection and positioning.
+The project integrates the YOLO* (You Only Look Once) model for real-time object detection and localization with robotic arm control, creating a seamless interaction between visual detection and physical movement. Additionally, the project includes calibration of the camera and workspace to ensure accurate detection and positioning.
 
 Key features:
 
@@ -250,3 +250,7 @@ There are several gaps that need to be addressed for system improvement.
 1. Expanding the image annotation database from images taken in the lab, from the appropriate lab camera, considering the distance from the object and the image quality as it exists in the lab. Additionally, it is preferable to build this database based on images of dummy objects since they are not identical to real food items. Expanding the database and training the model on a larger dataset will improve the model's recognition accuracy.
 2. Due to a problem we were unable to resolve during the robot's operation in the lab, the calculation of the object center and the robot's arrival at the center is accurate only in the middle of the lab table (the right side of the table). As the object is moved further left for recognition, the error in the robot's arrival at the center of the object increases, particularly along the X-axis. This error may stem from changes in lighting or disturbances that were not accounted for.
 3. Camera fixation - If the ceiling camera can be fixed in place without movement, the calibration steps can be performed less frequently, thus making the system more efficient.
+
+
+
+* the YOLO model was taken from Ultralitics
