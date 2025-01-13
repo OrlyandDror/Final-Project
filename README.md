@@ -95,32 +95,36 @@ A chessboard is an aid tool with black-and-white squares arranged in a grid patt
 
 Main Steps:
 
-Prepare the Chessboard:
+## Prepare the Chessboard:
 
-Use a chessboard with a known grid size, for example, 4x4 squares.
+1. Use a chessboard with a known grid size, for example the file "Checkeboard 6x4"
+Note: the size of the board refers to the inner corners of the checkeboard. 
+2. update the size of your checkeboard at the "setup enviroment" code part 1.
+## Capture Images of the Chessboard:
 
-The size of the squares must be accurate as it serves as the scale for calibration.
+3. Capture around 10 images of the chessboard from various angles in the lab environment.
 
-Capture Images of the Chessboard:
-
-Capture around 10 images of the chessboard from various angles and distances in the lab environment.
-
-Ensure the entire chessboard is visible in each image.
-
-Save the images in a folder and update the code to point to this folder (only to the folder).
+note: Ensure the entire chessboard is visible in each image.
+exampels:
+![WhatsApp Image 2025-01-13 at 17 09 47](https://github.com/user-attachments/assets/4f7bb41f-3869-4d7b-84aa-44d9c117603a)
+![WhatsApp Image 2025-01-13 at 17 09 47 (1)](https://github.com/user-attachments/assets/a9c3bf3f-6d3a-492d-95df-cef26b29fd42)
 
 
-Detect Chessboard Corners in the Images:
+4. Save the images in a folder and update the code to point to this folder (only to the folder at the "setup enviroment" code part 1).
+   
+## Detect Chessboard Corners in the Images:
 
 The algorithm automatically detects the corners of the squares on the chessboard.
 
-Calculate Calibration Parameters:
+## Calculate Calibration Parameters:
 
 The algorithm compares the location of the chessboard points as they appear in the image (2D) with their known positions in space (3D).
 
 These equations are used to compute the camera’s intrinsic matrix, extrinsic matrix, and distortion coefficients.
 
 After the camera is calibrated, we can use the calibration parameters to correct distortion in the images.
+
+5. update the folder path for saving the images after the correction in prat 2 at the "setup enviroment" code.
 
 ![image](https://github.com/user-attachments/assets/0e5eb656-fde5-4528-b70d-ff37c724b0d0)
 
